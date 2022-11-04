@@ -1,0 +1,89 @@
+{% extends 'base.html' %} 
+<!-- {% block title %} Home Page {% endblock %} -->
+{% block content %} 
+{%if user.is_superuser%}
+<center>
+<div class="main-body">
+<center>
+    <h1>Welcome to your account, {{user.username}}!</h1>
+</center>
+</br>
+<!-- placeholder text -->
+<center>
+    <p>You can access the forms to add employee/customerbelow.</p>
+    <p>You can also access different reports using the sidebar.</p>
+</center>
+<div>
+   <center>
+        <strong>
+            <a class = "add-btn" href = '/add_emp'> Add an Employee </a>
+            </br>
+            <a class = "add-btn" href = '/add_cust'>Add a Customer</a>
+            <br>
+            <a href = '/sign-up'>
+                Add New Supervisor
+            </a>
+            </br> 
+        </strong>
+    </center>
+</div>
+</div>
+</center>
+{%elif user.is_staff%}
+<center>
+    <div class="main-body">
+    <center>
+        <h1>Welcome to your account, {{user.username}}!</h1>
+    </center>
+    </br>
+    <!-- placeholder text -->
+    <center>
+        <p>You can access the forms to add employee/customer/supervisor below.</p>
+        <p>You can also access different reports using the sidebar.</p>
+    </center>
+    <div>
+       <center>
+            <strong>
+                <a class = "add-btn" href = '/add_emp'> Add an Employee </a>
+                </br>
+                <a class = "add-btn" href = '/add_cust'>Add a Customer</a>
+                {% comment %} <br>
+                <a href = '/sign-up'>
+                    Add New Supervisor
+                </a>
+                </br> {% endcomment %}
+            </strong>
+        </center>
+    </div>
+    </div>
+    </center>
+    {%else%}
+    <center>
+        <div class="main-body">
+        <center>
+            <h1>Welcome to your account, {{user.username}}!</h1>
+        </center>
+        </br>
+        <!-- placeholder text -->
+        <center>
+            <p>You can access the shop using the sidebar.</p>
+            {% comment %} <p>You can also access different reports using the sidebar.</p> {% endcomment %}
+        </center>
+        <div>
+           <center>
+                <strong>
+                    {% comment %} <a class = "add-btn" href = '/add_emp'> Add an Employee </a>
+                    </br>
+                    <a class = "add-btn" href = '/add_cust'>Add a Customer</a> {% endcomment %}
+                    {% comment %} <br>
+                    <a href = '/sign-up'>
+                        Add New Supervisor
+                    </a>
+                    </br> {% endcomment %}
+                </strong>
+            </center>
+        </div>
+        </div>
+        </center>
+    {%endif%}
+{% endblock %}

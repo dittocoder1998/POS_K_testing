@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block title %} Add Employee to Database {% endblock %}
+{% block content %} 
+
+<div class="form-body">
+
+<center> <h1>Add Employee to Database</h1> 
+<br/><br/>
+{% if submitted %} 
+Your employee was submitted successfully!
+{% else %}
+
+<form action = '' method = POST>
+    {% csrf_token %} 
+
+    {{form.as_p}}
+    <input type = 'submit' value = 'Submit' class = 'btn btn-success'>
+
+</form>
+</div>
+{% endif %}
+</center>
+{% endblock %}

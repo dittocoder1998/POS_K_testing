@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+<!-- {% block title %} Home Page {% endblock %} -->
+{% block content %} 
+<div class="main-body">
+<center>
+    <h1>Welcome to your account, {{Customer.username}}!</h1>
+</center>
+<!-- placeholder text -->
+<center>
+    <p>You can access the forms to add customers.</p>
+    <p>You can also access different reports using the sidebar.</p>
+</center>
+<div>
+   <center>
+        <strong>
+            <a class = "add-btn" href = '/add_cust'>Add a Customer</a>
+        </strong>
+    </center>
+</div>
+</div>
+
+{% endblock %}

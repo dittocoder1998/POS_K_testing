@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Admin Dashboard</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Side navigation -->
+  <div class="topnav">
+    <input type="text" placeholder="Search by ID">
+</div>
+<div class="sidenav">
+    <a href="./adminLanding.html">Main</a>
+    <a href="./AdminEmployee.html">Employee</a>
+    <a href="./AdminVendor.html">Vendors</a>
+    <a href="./AdminTransactions.html">Transactions</a>
+    <a href="#">Log Out</a>
+</div>
+
+  <!-- Page content -->
+  <div class="main">
+    <h3>Welcome to the admin page.</h3>
+    <h3>Please use the sidebar to navigate.</h3>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

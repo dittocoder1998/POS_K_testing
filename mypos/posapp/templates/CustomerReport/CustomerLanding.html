@@ -1,0 +1,44 @@
+{% extends 'home.html' %} 
+<!-- {% block title %} Home Page {% endblock %} -->
+{% block content %} 
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Employees</title>
+    {% comment %} <link href="style.css" rel="stylesheet" type="text/css" /> {% endcomment %}
+</head>
+    
+
+
+    <!-- Page content -->
+    <div class="emp-body">
+        <center>
+        <h1>Customers List</h1>
+        <table border = 1>
+            <!-- <caption></caption> -->
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            {% for cust in customers %} 
+            <tbody>
+            <tr>
+                <td>{{cust.cust_id}}</td>
+                <td>{{cust.cust_name}}</td>
+                <td>{{cust.cust_email}}</td>
+                <td>{{cust.cust_dob}}</td>
+                <td><a href="delete/{{ cust.cust_id }}">delete</a></td>
+            </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+    </center>
+    </div>
+    </table>
+{%endblock%}

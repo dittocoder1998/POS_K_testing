@@ -1,0 +1,75 @@
+{% load static %}
+
+{%if user.is_authenticated%}
+
+<!-- side bar -->
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky pt-3 sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">
+          <span data-feather="shopping-cart" class="align-text-bottom"></span>
+          Main Page
+        </a>
+      </li>
+      {%if user.is_superuser%}
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/empTable">
+          <span data-feather="home" class="align-text-bottom"></span>
+          Employee Report
+        </a>
+      </li>
+      {%elif user.is_staff%}
+      <li class="nav-item">
+        <a class="nav-link" href="/custTable">
+          <span data-feather="file" class="align-text-bottom"></span>
+          Customer Report
+        </a>
+      </li>
+      {%else%}
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/shop">
+          <span data-feather="home" class="align-text-bottom"></span>
+          Shop
+        </a>
+      </li>
+      {%endif%}
+      {%if user.is_superuser%}
+      <li class="nav-item">
+        <a class="nav-link" href="/custTable">
+          <span data-feather="file" class="align-text-bottom"></span>
+          Customer Report
+        </a>
+      </li>
+      {%endif%}
+    </ul>
+  </div>
+</nav>
+{% comment %} {%elif user.is_active%}
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky pt-3 sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/EmpHome">
+          <span data-feather="shopping-cart" class="align-text-bottom"></span>
+          Main Page
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/shop">
+          <span data-feather="home" class="align-text-bottom"></span>
+          Shop
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/custTrans">
+          <span data-feather="file" class="align-text-bottom"></span>
+          Transactions
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{%endif%} {% endcomment %}
+{%endif%}
+<!-- End side bar --> 

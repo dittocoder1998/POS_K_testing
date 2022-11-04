@@ -1,0 +1,54 @@
+{% extends 'home.html' %} 
+<!-- {% block title %} Home Page {% endblock %} -->
+{% block content %} 
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Employees</title>
+    {% comment %} <link href="style.css" rel="stylesheet" type="text/css" /> {% endcomment %}
+</head>
+
+
+
+    <!-- Page content -->
+    <div class = "emp-body">
+        <center>
+        <h1>Employee Info</h1>
+        <table border=1>
+            <!-- <caption></caption> -->
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Pay Rate</th>
+                    <th>Work Start Date</th>
+                    <th>Weekly Hours</th>
+                    <th>Email</th>
+                    <th>Supervisor ID</th>
+                    <th>Supervisor Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for emp in employees %} 
+            <tr>
+                <td>{{emp.emp_id}}</td>
+                <td>{{emp.emp_name}}</td>
+                <td>{{emp.emp_pay_rate}}</td>
+                <td>{{emp.emp_start_date}}</td>
+                <td>{{emp.emp_weekly_hours}}</td>
+                <td>{{emp.emp_email}}</td>
+                <td>1</td>
+                <td>Supervisor</td>
+                <td><a href="deleteEmp/{{ emp.emp_id }}">delete</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+        </table>
+    </div>
+    {% comment %} <script src="script.js"></script> {% endcomment %}
+    </table>
+</center>
+
+{% endblock %}

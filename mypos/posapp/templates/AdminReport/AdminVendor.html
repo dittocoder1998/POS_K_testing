@@ -1,0 +1,57 @@
+{% extends 'home.html' %} 
+<!-- {% block title %} Home Page {% endblock %} -->
+{% block content %} 
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Vendors</title>
+</head>
+
+    {% comment %} <div class="topnav">
+        <input type="text" placeholder="Search by ID">
+    </div> {% endcomment %}
+
+    <!-- Page content -->
+    
+    <div class="main-body">
+        <center>
+        <h1>Vendors Info</h1>
+        <table border=1>
+            <!-- <caption></caption> -->
+            <thead>
+                <tr>
+                    <th>Vendor ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Order Status</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Category Id</th>
+                    <th>Items Remaining</th>
+                </tr>
+            </thead>
+            <tr>
+                <th>ID</th>
+                <td>Bud Light</td>
+                <td>Houston</td>
+                <td>Delivered</td>
+                <td>budlight@gmail.com</td>
+                <td>666666666</td>
+                <td>1</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <td>Chips And Stuff</td>
+                <td>Austin</td>
+                <td>Order Placed</td>
+                <td>chipsandstuff@gmail.com</td>
+                <td>5555555555</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+        </table>
+    </center>
+    </div>
+    {% endblock %}
